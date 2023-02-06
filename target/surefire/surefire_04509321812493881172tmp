@@ -1,0 +1,6 @@
+#surefire_0
+#Tue Jan 31 23:35:23 EET 2023
+test=TestSuite
+basedir=/Users/eugeniazorina/qa/JavaAppium/JavaAppium
+user.dir=/Users/eugeniazorina/qa/JavaAppium/JavaAppium
+localRepository=/Users/eugeniazorina/.m2/repository
