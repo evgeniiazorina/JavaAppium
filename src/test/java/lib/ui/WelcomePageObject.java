@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WelcomePageObject extends MainPageObject{
@@ -18,6 +19,7 @@ public class WelcomePageObject extends MainPageObject{
         super(driver);
     }
 
+    @Step("Waiting learn more link on the welcome screen")
     public void waitForLearnMoreLink()
     {
         this.waitForElementPresent(
@@ -27,6 +29,7 @@ public class WelcomePageObject extends MainPageObject{
         );
     }
 
+    @Step("Clicking next button on the welcome screen")
     public void clickNextButton()
     {
         this.waitForElementAndClick(
@@ -36,6 +39,7 @@ public class WelcomePageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for new way to explore text on the welcome screen")
     public void waitForNewWayToExploreText()
     {
         this.waitForElementPresent(
@@ -45,6 +49,7 @@ public class WelcomePageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for add or edit preferred lang text on the welcome screen")
     public void waitAddOrEditPreferredLangText()
     {
         this.waitForElementPresent(
@@ -54,6 +59,7 @@ public class WelcomePageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for learn more about date collected text on the welcome screen")
     public void waitForLearnMoreAboutDateCollectedText()
     {
         this.waitForElementPresent(
@@ -63,6 +69,7 @@ public class WelcomePageObject extends MainPageObject{
         );
     }
 
+    @Step("Clicking the get started button on the welcome screen")
     public void clickGetStartedButton()
     {
         this.waitForElementAndClick(
@@ -72,6 +79,7 @@ public class WelcomePageObject extends MainPageObject{
         );
     }
 
+    @Step("Clicking the skip button on the welcome screen")
     public void clickSkip()
     {
         this.waitForElementAndClick(

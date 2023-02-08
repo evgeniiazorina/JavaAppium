@@ -1,5 +1,6 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import lib.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -30,6 +31,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         super(driver);
     }
 
+    @Step("Opening folder by name")
     public void openFolderByName(String name_of_folder)
     {
         String folder_name_xpath = getFolderXpathByName(name_of_folder);
@@ -40,6 +42,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting article to appear by title")
     public void waitForArticleToAppearByTitle(String article_title)
     {
         String article_xpath = getFolderXpathByName(article_title);
@@ -50,6 +53,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting article to disappear by title")
     public void waitForArticleToDisappearByTitle(String article_title)
     {
         String article_xpath = getFolderXpathByName(article_title);
@@ -60,6 +64,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         );
     }
 
+    @Step("Swiping by article to delete")
     public void swipeByArticleToDelete(String article_title)
     {
         this.waitForArticleToAppearByTitle(article_title);
@@ -80,7 +85,7 @@ abstract public class MyListsPageObject extends MainPageObject{
         }
 
         if (Platform.getInstance().isIOS()) {
-           this.clickElementToTheRightUpperCorner(article_xpath, "Cannot find saved article");
+            this.clickElementToTheRightUpperCorner(article_xpath, "Cannot find saved article");
         }
 
         if (Platform.getInstance().isMW()) {

@@ -1,10 +1,11 @@
 package lib.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 abstract public class SearchPageObject extends MainPageObject{
 
-     protected static String
+    protected static String
             SEARCH_INIT_ELEMENT,
             SEARCH_INPUT,
             SEARCH_RESULT_BY_SUBSTRING_TPL,
@@ -24,6 +25,7 @@ abstract public class SearchPageObject extends MainPageObject{
     }
     /* TEMPLATES METHODS */
 
+    @Step("Initializing the search field")
     public void initSearchInput()
     {
         this.waitForElementPresent(
@@ -38,6 +40,8 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+
+    @Step("Waiting for button to cancel search result")
     public void waitForCancelButtonToAppear()
     {
         this.waitForElementPresent(
@@ -47,6 +51,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for search cancel button to disappear")
     public void waitForCancelButtonToDisappear()
     {
         this.waitForElementNotPresent(
@@ -56,6 +61,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Click button to cancel search result")
     public void clickCancelSearch()
     {
         this.waitForElementAndClick(
@@ -65,6 +71,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Typing '{search_line}' to the search line")
     public void typeSearchLine(String search_line)
     {
         this.waitForElementAndSendKeys(
@@ -75,6 +82,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for search result")
     public void waitForSearchResult(String substring)
     {
         String search_result_xpath = getResultSearchElement(substring);
@@ -84,6 +92,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for search result and select an article by substring in article title")
     public void clickByArticleWithSubstring(String substring)
     {
         String search_result_xpath = getResultSearchElement(substring);
@@ -94,6 +103,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Getting amount of found articles")
     public int getAmountOfFoundArticles()
     {
         this.waitForElementPresent(
@@ -106,6 +116,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Waiting for empty result label")
     public void waitForEmptyResultsLabel()
     {
         this.waitForElementPresent(
@@ -115,6 +126,7 @@ abstract public class SearchPageObject extends MainPageObject{
         );
     }
 
+    @Step("Making sure there are no results for the search")
     public void assertThereIsNoResultOfSearch()
     {
         this.assertElementNotPresent(
